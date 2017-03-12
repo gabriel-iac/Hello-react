@@ -16,19 +16,16 @@ var GreaterForm = React.createClass({
     e.preventDefault();
     var name = this.refs.name.value;
     var message = this.refs.message.value;
-
-    if (name.length > 0 && message.length == 0){
+    var updates = {};
+    if (name.length > 0){
       this.refs.name.value = "";
-      this.props.onNewName(name);
-    }else if(message.length > 0 && name.length == 0){
-      this.refs.message.value = "";
-      this.props.onNewMessage(message);
-    }else{
-      this.refs.name.value = "";
-      this.refs.message.value = "";
-      this.props.onNewName(name);
-      this.props.onNewMessage(message);
+      updates.name = name;
     }
+    if(message.length > 0 ){
+      this.refs.message.value = "";
+      updates.message = message
+    }
+    this.props.onNewupdates(updates);
   },
   render: function(){
     return(
@@ -55,23 +52,17 @@ var Greeter = React.createClass({
       message: this.props.message
     }
   },
-  handleNewName: function(name){ 
-    this.setState({
-      name:name
-    })
+  handleUpdates: function(updates){ 
+    this.setState(updates)
   },
-  handleNewMessage: function(message){ 
-    this.setState({
-      message:message
-    })
-  },
+
   render: function(){
     var name = this.state.name;
     var message = this.state.message;
     return (
       <div>
         <GreaterMessage name={name} message={message}/>
-        <GreaterForm onNewName={this.handleNewName} onNewMessage={this.handleNewMessage}/>        
+        <GreaterForm onNewupdates={this.handleUpdates}/>        
       </div>
     )
   }
