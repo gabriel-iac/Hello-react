@@ -31,9 +31,13 @@ var GreaterForm = React.createClass({
     return(
       //onSubmit={this.onButtonCLick}
       <form onSubmit={this.onFormSubmit}>
+      <div>
         <input type="text" placeholder="enter name" ref="name"/>
-        <input type="textarea" placeholder="enter message" ref="message"/>
-        <button>Set Name</button>
+      </div>
+      <div>
+        <textarea placeholder="enter message" ref="message"/>
+      </div>
+      <button>Submit</button>
       </form>
     );
   }
