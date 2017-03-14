@@ -51,6 +51,7 @@
 	var GreeterMessage = __webpack_require__(178);
 	var GreeterForm = __webpack_require__(179);
 	var Greeter = __webpack_require__(180);
+
 	var firstName = "Gemma";
 
 	ReactDOM.render(React.createElement(Greeter, { name: firstName }), document.getElementById('app'));

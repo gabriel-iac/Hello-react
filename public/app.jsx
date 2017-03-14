@@ -1,8 +1,8 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var GreeterMessage = require('./components/GreeterMessage.jsx');
-var GreeterForm = require('./components/GreeterForm.jsx');
-var Greeter = require('./components/Greeter.jsx');
+var GreeterMessage = require('GreeterMessage');
+var GreeterForm = require('GreeterForm');
+var Greeter = require('Greeter');
 
 var firstName = "Gemma"
 
